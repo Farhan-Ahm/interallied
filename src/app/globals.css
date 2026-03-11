@@ -5,9 +5,11 @@
 
 :root {
   --ia-navy:        #0a1628;
+  --ia-navy2:       rgb(255, 255, 255)8;
   --ia-dark:        #ffffff;
   --ia-mid:         #f4f6f9;
   --ia-blue:        #1a3a6e;
+  --ia-blue2:        #ffffff;
   --ia-blue-light:  #2a5298;
   --ia-steel:       #4a7ab5;
   --ia-muted:       #5a6a7e;
@@ -172,18 +174,12 @@ h1, h2, h3, h4, h5 {
 .ia-hero {
   min-height: 100vh;
   background:
-    linear-gradient(160deg, rgba(10,22,40,0.92) 0%, rgba(26,58,110,0.7) 60%, rgba(10,22,40,0.95) 100%),
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,124,42,0.03) 40px,
-      rgba(255,124,42,0.03) 41px
-    );
+    linear-gradient(160deg, rgba(10,22,40,0.85) 0%, rgba(26,58,110,0.65) 60%, rgba(10,22,40,0.90) 100%),
+    url('/HeroMain.jpg') center center / cover no-repeat;
   display: flex; align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 176px 0 60px;
+  padding: 60px 0 60px;
 }
 
 .ia-hero::before {
@@ -398,7 +394,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .ia-product-thumb {
-  background: linear-gradient(135deg, var(--ia-blue) 0%, var(--ia-navy) 100%);
+  background: linear-gradient(135deg, var(--ia-blue2) 0%, var(--ia-navy2) 100%);
   height: 160px;
   display: flex; align-items: center; justify-content: center;
   font-size: 3.5rem;

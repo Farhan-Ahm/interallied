@@ -18,20 +18,17 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  { id: 1,  name: 'PT-25',      category: 'Power Transformers', icon: '⚡', specs: ['Capacity: 25 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 2,  name: 'PT-50',      category: 'Power Transformers', icon: '⚡', specs: ['Capacity: 50 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 3,  name: 'PT-100',     category: 'Power Transformers', icon: '⚡', specs: ['Capacity: 100 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 4,  name: 'PT-500',     category: 'Power Transformers', icon: '⚡', specs: ['Capacity: 500 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 5,  name: 'PT-2500',     category: 'Power Transformers',icon: '⚡', specs: ['Capacity: 2500 kVA', 'Types: Pole / Pad / UnderGround'] },
-  
-  { id: 6, name: 'LV-SWG-A',    category: 'LV Switchgear',icon: '⚙️', specs: ['Voltage: ≤1000V', 'Type: MDB / MCC / ATS / Panelboards',   'Typical breakers: MCB / MCCB / ACB'] },
-  { id: 7, name: 'MV-SWG-B',    category: 'MV Switchgear',icon: '⚙️', specs: ['Voltage: 1kV – 36kV', 'Type: Metal-Clad / GIS / AIS / RMU',   'Common voltage classes (kV): 11 / 15 / 13.8 / 22 / 33'] },
-  { id: 8, name: 'HV-SWG-C',    category: 'HV Switchgear',icon: '⚙️', specs: ['Voltage: >36kV', 'Type: SF6 Circuit Breaker / Dead Tank / Live Tank',   'Used in: Transmission substations / Power plants'] },
-  
-  { id: 9,  name: 'MSB-SWB-A',  category: 'Switchboards',icon: '🗄️', specs: ['Primary Power Distribution Panel','Typical components: ACB / Busbar / Metering'] },
-  { id: 10, name: 'DIS-SWB-A',  category: 'Switchboards',icon: '🗄️', specs: ['Distribution Switchboards','Types: MDB / SDB / FDB'] },
-  { id: 11, name: 'MCT-SWB-A',  category: 'Switchboards',icon: '🗄️', specs: ['Motor Control Switchboards','Types: MCC / VFD / Soft Starter'] },
- 
+  { id: 1,  name: 'PT-25',     category: 'Power Transformers', image: '/Products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 25 kVA', 'Types: Pole / Pad / UnderGround'] },
+  { id: 2,  name: 'PT-50',     category: 'Power Transformers', image: '/Products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 50 kVA',   'Types: Pole / Pad / UnderGround'] },
+  { id: 3,  name: 'PT-100',    category: 'Power Transformers', image: '/Products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 100 kVA',  'Types: Pole / Pad / UnderGround'] },
+  { id: 4,  name: 'PT-500',    category: 'Power Transformers', image: '/Products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 500 kVA',  'Types: Pole / Pad / UnderGround'] },
+  { id: 5,  name: 'PT-2500',   category: 'Power Transformers', image: '/Products/pt-25.png', specs: ['Category: Power Transformers','Capacity: 2500 kVA', 'Types: Pole / Pad / UnderGround'] },
+  { id: 6,  name: 'LV-SWG-A',  category: 'LV Switchgear',      image: '/Products/lv-swg.jpg',  specs: ['Category: Low Voltage (LV) Switchgear','Voltage: ≤1000V', 'Type: MDB / MCC / ATS / Panelboards', 'Typical breakers: MCB / MCCB / ACB'] },
+  { id: 7,  name: 'MV-SWG-B',  category: 'MV Switchgear',      image: '/Products/mv-swg.jpg',  specs: ['Category: Medium Voltage (LV) Switchgear','Voltage: 1kV – 36kV', 'Type: Metal-Clad / GIS / AIS / RMU', 'Common voltage classes (kV): 11 / 15 / 13.8 / 22 / 33'] },
+  { id: 8,  name: 'HV-SWG-C',  category: 'HV Switchgear',      image: '/Products/hv-swg.jpg',  specs: ['Category: High Voltage (LV) Switchgear','Voltage: >36kV', 'Type: SF6 Circuit Breaker / Dead Tank / Live Tank', 'Used in: Transmission substations / Power plants'] },
+  { id: 9,  name: 'MSB-SWB-A', category: 'Switchboards',       image: '/Products/msb-swb.jpg', specs: ['Primary Power Distribution Panel', 'Typical components: ACB / Busbar / Metering'] },
+  { id: 10, name: 'DIS-SWB-A', category: 'Switchboards',       image: '/Products/dis-swb.jpg', specs: ['Distribution Switchboards', 'Types: MDB / SDB / FDB'] },
+  { id: 11, name: 'MCT-SWB-A', category: 'Switchboards',       image: '/Products/mct-swb.png', specs: ['Motor Control Switchboards', 'Types: MCC / VFD / Soft Starter'] },
 ];
 
 // ─────────────────────────────────────────────
@@ -145,7 +142,7 @@ function Hero({ onCatalogueClick }) {
             </div>
           </div>
           <div className="col-lg-5 d-none d-lg-flex justify-content-center align-items-center">
-            <div style={{ fontSize: '10rem', opacity: 0.15, userSelect: 'none', lineHeight: 1 }}>⚡</div>
+          {/*<div style={{ fontSize: '10rem', opacity: 0.15, userSelect: 'none', lineHeight: 1 }}>⚡</div>*/}
           </div>
         </div>
       </div>
@@ -184,13 +181,37 @@ function StatsStrip() {
 // ─────────────────────────────────────────────
 function About() {
   const cards = [
-    { icon: '🏭', title: 'Manufacturing Excellence', body: 'State-of-the-art manufacturing facilities ensuring every unit meets international quality standards including IEC, BS and ANSI.' },
-    { icon: '🔬', title: 'Engineering Expertise',    body: 'Our team of certified electrical engineers provides tailored solutions for the most demanding power distribution challenges.' },
-    { icon: '🌍', title: 'Global Reach',             body: 'Supplying reliable electrical infrastructure to clients across 40+ countries spanning Asia, Middle East, Africa and Europe.' },
-    { icon: '✅', title: 'Certified Quality',        body: 'ISO 9001:2015 certified with products tested to IEC 60076, IEC 62271 and other applicable international standards.' },
-    { icon: '🔧', title: 'After-Sales Support',      body: '24/7 technical support, preventive maintenance programs and fast spare parts availability to minimize downtime.' },
-    { icon: '🌱', title: 'Sustainable Solutions',    body: 'Energy-efficient designs, eco-friendly insulation materials and low-loss transformer cores for a greener future.' },
-  ];
+  {
+    icon: <i className="bi bi-building-gear" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'Manufacturing Excellence',
+    body: 'State-of-the-art manufacturing facilities ensuring every unit meets international quality standards including IEC, BS and ANSI.'
+  },
+  {
+    icon: <i className="bi bi-cpu" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'Engineering Expertise',
+    body: 'Our team of certified electrical engineers provides tailored solutions for the most demanding power distribution challenges.'
+  },
+  {
+    icon: <i className="bi bi-globe2" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'Global Reach',
+    body: 'Supplying reliable electrical infrastructure to clients across 40+ countries spanning Asia, Middle East, Africa and Europe.'
+  },
+  {
+    icon: <i className="bi bi-patch-check" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'Certified Quality',
+    body: 'ISO 9001:2015 certified with products tested to IEC 60076, IEC 62271 and other applicable international standards.'
+  },
+  {
+    icon: <i className="bi bi-headset" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'After-Sales Support',
+    body: '24/7 technical support, preventive maintenance programs and fast spare parts availability to minimize downtime.'
+  },
+  {
+    icon: <i className="bi bi-recycle" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+    title: 'Sustainable Solutions',
+    body: 'Energy-efficient designs, eco-friendly insulation materials and low-loss transformer cores for a greener future.'
+  },
+];
 
   return (
     <section id="about" className="ia-section ia-section-alt">
@@ -270,10 +291,14 @@ function Catalogue({ cart, onAddToCart }) {
             <div className="col-sm-6 col-lg-4 col-xl-3" key={product.id}>
               <div className="ia-product-card">
                 <div className="ia-product-thumb">
-                  {product.icon}
-                  <span className="ia-product-cat-badge">{product.category.split(' ')[0]}</span>
-                </div>
-                <div className="ia-product-body">
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', padding: '5px' }}
+              />
+              <span className="ia-product-cat-badge">{product.category.split(' ')[0]}</span>
+            </div>
+                  <div className="ia-product-body">
                   <div className="ia-product-name">{product.name}</div>
                   <div className="ia-product-specs">
                     {product.specs.map((s) => <span key={s}>{s}</span>)}
