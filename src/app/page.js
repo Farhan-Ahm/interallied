@@ -190,10 +190,10 @@ function Hero({ onCatalogueClick }) {
 // ─────────────────────────────────────────────
 function StatsStrip() {
   const stats = [
-    { num: '25+',  label: 'Years Experience' },
+    { num: '10+',  label: 'Years Experience' },
     { num: '500+', label: 'Projects Delivered' },
-    { num: '6',    label: 'Product Categories' },
-    { num: '40+',  label: 'Countries Served' },
+    { num: '5',    label: 'Product Categories' },
+    { num: '5+',  label: 'Countries Served' },
   ];
   return (
     <div className="ia-stats-strip">
