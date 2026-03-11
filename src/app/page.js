@@ -18,17 +18,17 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  { id: 1,  name: 'PT-25',     category: 'Power Transformers', image: '/Products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 25 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 2,  name: 'PT-50',     category: 'Power Transformers', image: '/Products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 50 kVA',   'Types: Pole / Pad / UnderGround'] },
-  { id: 3,  name: 'PT-100',    category: 'Power Transformers', image: '/Products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 100 kVA',  'Types: Pole / Pad / UnderGround'] },
-  { id: 4,  name: 'PT-500',    category: 'Power Transformers', image: '/Products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 500 kVA',  'Types: Pole / Pad / UnderGround'] },
-  { id: 5,  name: 'PT-2500',   category: 'Power Transformers', image: '/Products/pt-25.png', specs: ['Category: Power Transformers','Capacity: 2500 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 6,  name: 'LV-SWG-A',  category: 'LV Switchgear',      image: '/Products/lv-swg.jpg',  specs: ['Category: Low Voltage (LV) Switchgear','Voltage: ≤1000V', 'Type: MDB / MCC / ATS / Panelboards', 'Typical breakers: MCB / MCCB / ACB'] },
-  { id: 7,  name: 'MV-SWG-B',  category: 'MV Switchgear',      image: '/Products/mv-swg.jpg',  specs: ['Category: Medium Voltage (LV) Switchgear','Voltage: 1kV – 36kV', 'Type: Metal-Clad / GIS / AIS / RMU', 'Common voltage classes (kV): 11 / 15 / 13.8 / 22 / 33'] },
-  { id: 8,  name: 'HV-SWG-C',  category: 'HV Switchgear',      image: '/Products/hv-swg.jpg',  specs: ['Category: High Voltage (LV) Switchgear','Voltage: >36kV', 'Type: SF6 Circuit Breaker / Dead Tank / Live Tank', 'Used in: Transmission substations / Power plants'] },
-  { id: 9,  name: 'MSB-SWB-A', category: 'Switchboards',       image: '/Products/msb-swb.jpg', specs: ['Primary Power Distribution Panel', 'Typical components: ACB / Busbar / Metering'] },
-  { id: 10, name: 'DIS-SWB-A', category: 'Switchboards',       image: '/Products/dis-swb.jpg', specs: ['Distribution Switchboards', 'Types: MDB / SDB / FDB'] },
-  { id: 11, name: 'MCT-SWB-A', category: 'Switchboards',       image: '/Products/mct-swb.png', specs: ['Motor Control Switchboards', 'Types: MCC / VFD / Soft Starter'] },
+  { id: 1,  name: 'PT-25',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 25 kVA', 'Types: Pole / Pad / UnderGround'] },
+  { id: 2,  name: 'PT-50',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 50 kVA',   'Types: Pole / Pad / UnderGround'] },
+  { id: 3,  name: 'PT-100',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 100 kVA',  'Types: Pole / Pad / UnderGround'] },
+  { id: 4,  name: 'PT-500',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 500 kVA',  'Types: Pole / Pad / UnderGround'] },
+  { id: 5,  name: 'PT-2500',   category: 'Power Transformers', image: '/products/pt-25.png', specs: ['Category: Power Transformers','Capacity: 2500 kVA', 'Types: Pole / Pad / UnderGround'] },
+  { id: 6,  name: 'LV-SWG-A',  category: 'LV Switchgear',      image: '/products/lv-swg.jpg',  specs: ['Category: Low Voltage (LV) Switchgear','Voltage: ≤1000V', 'Type: MDB / MCC / ATS / Panelboards', 'Typical breakers: MCB / MCCB / ACB'] },
+  { id: 7,  name: 'MV-SWG-B',  category: 'MV Switchgear',      image: '/products/mv-swg.jpg',  specs: ['Category: Medium Voltage (LV) Switchgear','Voltage: 1kV – 36kV', 'Type: Metal-Clad / GIS / AIS / RMU', 'Common voltage classes (kV): 11 / 15 / 13.8 / 22 / 33'] },
+  { id: 8,  name: 'HV-SWG-C',  category: 'HV Switchgear',      image: '/products/hv-swg.jpg',  specs: ['Category: High Voltage (LV) Switchgear','Voltage: >36kV', 'Type: SF6 Circuit Breaker / Dead Tank / Live Tank', 'Used in: Transmission substations / Power plants'] },
+  { id: 9,  name: 'MSB-SWB-A', category: 'Switchboards',       image: '/products/msb-swb.jpg', specs: ['Primary Power Distribution Panel', 'Typical components: ACB / Busbar / Metering'] },
+  { id: 10, name: 'DIS-SWB-A', category: 'Switchboards',       image: '/products/dis-swb.jpg', specs: ['Distribution Switchboards', 'Types: MDB / SDB / FDB'] },
+  { id: 11, name: 'MCT-SWB-A', category: 'Switchboards',       image: '/products/mct-swb.png', specs: ['Motor Control Switchboards', 'Types: MCC / VFD / Soft Starter'] },
 ];
 
 // ─────────────────────────────────────────────
