@@ -56,19 +56,19 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.5px;
 }
 
-/* ── Navbar ── */
+/* ── Navbar ── FIX: position: fixed !important so Bootstrap cannot override ── */
 .ia-navbar {
   background: rgba(10,22,40,0.97) !important;
   backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--ia-orange);
   padding: 0 !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  position: fixed !important;   /* ← FIXED: was 'fixed' without !important */
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 1050;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, background 0.3s;
 }
 .ia-navbar.scrolled {
   box-shadow: 0 4px 30px rgba(0,0,0,0.5);
@@ -127,9 +127,13 @@ h1, h2, h3, h4, h5 {
 }
 .navbar-nav .nav-link:hover::after { transform: scaleX(1); }
 
-/* Cart button */
+/* ── Cart button in Navbar ── FIX: overflow visible on all parents ── */
+.navbar-nav .nav-item {
+  overflow: visible !important;  /* ← FIXED: ensures badge is not clipped */
+}
+
 .ia-cart-btn {
-  overflow: visible;
+  overflow: visible !important;  /* ← FIXED: was 'overflow: visible' but needed !important */
   position: relative;
   background: transparent;
   border: 1.5px solid var(--ia-orange);
@@ -149,6 +153,8 @@ h1, h2, h3, h4, h5 {
   background-color: var(--ia-orange) !important;
   color: var(--ia-navy) !important;
 }
+
+/* ── Cart Badge ── FIX: z-index raised, parent overflow visible ── */
 .ia-cart-badge {
   position: absolute;
   top: -10px; right: -10px;
@@ -161,7 +167,7 @@ h1, h2, h3, h4, h5 {
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-body);
   border: 2px solid var(--ia-navy);
-  z-index: 10;
+  z-index: 9999;          /* ← FIXED: raised z-index so badge shows above all */
   pointer-events: none;
 }
 
@@ -755,6 +761,77 @@ h1, h2, h3, h4, h5 {
 .ia-back-to-top.hidden { opacity: 0; transform: translateY(20px); pointer-events: none; }
 .ia-back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
 
+/* ── Floating Cart Button ── NEW ── */
+.ia-floating-cart {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: auto;
+  min-width: 56px;
+  height: 56px;
+  background: var(--ia-orange);
+  color: var(--ia-navy);
+  border: none;
+  border-radius: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1000;
+  box-shadow: 0 6px 24px rgba(255,124,42,0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s, box-shadow 0.2s, min-width 0.3s ease;
+  padding: 0 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 1px;
+  overflow: visible;
+}
+.ia-floating-cart:hover {
+  background: var(--ia-orange-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(255,124,42,0.6);
+}
+.ia-floating-cart.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.ia-floating-cart.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.ia-floating-cart-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ia-floating-cart-count {
+  background: var(--ia-navy);
+  color: var(--ia-orange);
+  font-size: 0.7rem;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  font-family: var(--font-body);
+  border: 1.5px solid var(--ia-orange);
+  animation: ia-badge-pop 0.25s ease;
+}
+@keyframes ia-badge-pop {
+  0%   { transform: scale(0.6); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
 /* ── Responsive ── */
 @media (max-width: 991px) {
   .navbar-collapse { background: var(--ia-navy); padding: 12px 16px; }
@@ -769,4 +846,6 @@ h1, h2, h3, h4, h5 {
   .ia-section { padding: 60px 0; }
   .ia-stat-num { font-size: 2rem; }
   .ia-back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; font-size: 1rem; }
+  .ia-floating-cart { bottom: 20px; right: 20px; height: 50px; padding: 0 14px; }
+  .ia-floating-cart-label { display: none; }
 }

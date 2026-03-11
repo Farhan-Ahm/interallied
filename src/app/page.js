@@ -9,12 +9,11 @@ import './globals.css';
 // ─────────────────────────────────────────────
 const CATEGORIES = [
   'All',
-  'Power Transformers',  
-  'LV Switchgear',  
-  'MV Switchgear', 
-  'HV Switchgear', 
+  'Power Transformers',
+  'LV Switchgear',
+  'MV Switchgear',
+  'HV Switchgear',
   'Switchboards',
-  
 ];
 
 const PRODUCTS = [
@@ -50,6 +49,41 @@ function BackToTop() {
       title="Back to top"
     >
       <i className="bi bi-arrow-up" />
+    </button>
+  );
+}
+
+// ─────────────────────────────────────────────
+// FLOATING CART BUTTON  ← NEW
+// ─────────────────────────────────────────────
+function FloatingCart({ cartCount, onCartOpen }) {
+  const [visible, setVisible] = useState(false);
+
+  // Show floating cart only after user scrolls past the navbar
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 120);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <button
+      className={`ia-floating-cart ${visible ? 'visible' : 'hidden'}`}
+      onClick={onCartOpen}
+      title="Open inquiry cart"
+    >
+      <i className="bi bi-cart3" />
+      {cartCount > 0 && (
+        <>
+          <span className="ia-floating-cart-label">Inquiry</span>
+          <span className="ia-floating-cart-count">
+            {cartCount > 99 ? '99+' : cartCount}
+          </span>
+        </>
+      )}
+      {cartCount === 0 && (
+        <span className="ia-floating-cart-label">Inquiry</span>
+      )}
     </button>
   );
 }
@@ -96,7 +130,8 @@ function Navbar({ cartCount, onCartOpen }) {
                 <a className="nav-link" href={`#${id}`} onClick={(e) => navClick(e, id)}>{label}</a>
               </li>
             ))}
-            <li className="nav-item" style={{ position: 'relative' }}>
+            {/* Cart button in navbar — FIX: wrapper div with overflow:visible */}
+            <li className="nav-item" style={{ position: 'relative', overflow: 'visible' }}>
               <button className="ia-cart-btn nav-link" onClick={onCartOpen}>
                 <i className="bi bi-cart3" /> Cart
                 {cartCount > 0 && (
@@ -142,7 +177,7 @@ function Hero({ onCatalogueClick }) {
             </div>
           </div>
           <div className="col-lg-5 d-none d-lg-flex justify-content-center align-items-center">
-          {/*<div style={{ fontSize: '10rem', opacity: 0.15, userSelect: 'none', lineHeight: 1 }}>⚡</div>*/}
+            {/*<div style={{ fontSize: '10rem', opacity: 0.15, userSelect: 'none', lineHeight: 1 }}>⚡</div>*/}
           </div>
         </div>
       </div>
@@ -181,37 +216,37 @@ function StatsStrip() {
 // ─────────────────────────────────────────────
 function About() {
   const cards = [
-  {
-    icon: <i className="bi bi-building-gear" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'Manufacturing Excellence',
-    body: 'State-of-the-art manufacturing facilities ensuring every unit meets international quality standards including IEC, BS and ANSI.'
-  },
-  {
-    icon: <i className="bi bi-cpu" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'Engineering Expertise',
-    body: 'Our team of certified electrical engineers provides tailored solutions for the most demanding power distribution challenges.'
-  },
-  {
-    icon: <i className="bi bi-globe2" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'Global Reach',
-    body: 'Supplying reliable electrical infrastructure to clients across 40+ countries spanning Asia, Middle East, Africa and Europe.'
-  },
-  {
-    icon: <i className="bi bi-patch-check" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'Certified Quality',
-    body: 'ISO 9001:2015 certified with products tested to IEC 60076, IEC 62271 and other applicable international standards.'
-  },
-  {
-    icon: <i className="bi bi-headset" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'After-Sales Support',
-    body: '24/7 technical support, preventive maintenance programs and fast spare parts availability to minimize downtime.'
-  },
-  {
-    icon: <i className="bi bi-recycle" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-    title: 'Sustainable Solutions',
-    body: 'Energy-efficient designs, eco-friendly insulation materials and low-loss transformer cores for a greener future.'
-  },
-];
+    {
+      icon: <i className="bi bi-building-gear" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'Manufacturing Excellence',
+      body: 'State-of-the-art manufacturing facilities ensuring every unit meets international quality standards including IEC, BS and ANSI.'
+    },
+    {
+      icon: <i className="bi bi-cpu" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'Engineering Expertise',
+      body: 'Our team of certified electrical engineers provides tailored solutions for the most demanding power distribution challenges.'
+    },
+    {
+      icon: <i className="bi bi-globe2" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'Global Reach',
+      body: 'Supplying reliable electrical infrastructure to clients across 40+ countries spanning Asia, Middle East, Africa and Europe.'
+    },
+    {
+      icon: <i className="bi bi-patch-check" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'Certified Quality',
+      body: 'ISO 9001:2015 certified with products tested to IEC 60076, IEC 62271 and other applicable international standards.'
+    },
+    {
+      icon: <i className="bi bi-headset" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'After-Sales Support',
+      body: '24/7 technical support, preventive maintenance programs and fast spare parts availability to minimize downtime.'
+    },
+    {
+      icon: <i className="bi bi-recycle" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
+      title: 'Sustainable Solutions',
+      body: 'Energy-efficient designs, eco-friendly insulation materials and low-loss transformer cores for a greener future.'
+    },
+  ];
 
   return (
     <section id="about" className="ia-section ia-section-alt">
@@ -291,14 +326,14 @@ function Catalogue({ cart, onAddToCart }) {
             <div className="col-sm-6 col-lg-4 col-xl-3" key={product.id}>
               <div className="ia-product-card">
                 <div className="ia-product-thumb">
-              <img
-                src={product.image}
-                alt={product.name}
-                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', padding: '5px' }}
-              />
-              <span className="ia-product-cat-badge">{product.category.split(' ')[0]}</span>
-            </div>
-                  <div className="ia-product-body">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', padding: '5px' }}
+                  />
+                  <span className="ia-product-cat-badge">{product.category.split(' ')[0]}</span>
+                </div>
+                <div className="ia-product-body">
                   <div className="ia-product-name">{product.name}</div>
                   <div className="ia-product-specs">
                     {product.specs.map((s) => <span key={s}>{s}</span>)}
@@ -734,7 +769,10 @@ export default function Home() {
         onUpdateQty={updateQty}
         onRemove={removeItem}
       />
+      {/* Back to top — bottom LEFT */}
       <BackToTop />
+      {/* Floating cart — bottom RIGHT ← NEW */}
+      <FloatingCart cartCount={cartCount} onCartOpen={() => setDrawerOpen(true)} />
     </>
   );
 }
