@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .ia-hero h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2rem, 7vw, 6rem);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.05;
@@ -848,4 +848,7 @@ h1, h2, h3, h4, h5 {
   .ia-back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; font-size: 1rem; }
   .ia-floating-cart { bottom: 20px; right: 20px; height: 50px; padding: 0 14px; }
   .ia-floating-cart-label { display: none; }
+
+  ia-hero h1 { font-size: clamp(1.8rem, 9vw, 3rem); }
+  .ia-hero h1 em { font-size: clamp(1.8rem, 9vw, 3rem); }
 }
