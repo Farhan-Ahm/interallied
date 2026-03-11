@@ -638,7 +638,7 @@ function Footer() {
           <div className="col-lg-4">
             <div className="ia-footer-brand">INTER<span>ALLIED</span></div>
             <p style={{ color: '#cfd1d3', fontSize: '0.88rem', marginTop: '14px', lineHeight: 1.75 }}>
-              Premium electrical power equipment — transformers, switchgear and switchboard solutions for industrial and commercial applications.
+              Premium electrical power equipment - transformers, switchgear and switchboard solutions for industrial and commercial applications.
             </p>
           </div>
           <div className="col-6 col-lg-2 offset-lg-2">

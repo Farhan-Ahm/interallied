@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Interallied — Transformers, Switchgear & Switchboards',
+  title: 'InterAllied : Transformers, Switchgear & Switchboards',
   description:
     'Interallied supplies premium power transformers, distribution transformers, LV switchboards, MV switchgear, control panels and busbar trunking solutions.',
   keywords: 'transformers, switchgear, switchboards, power, electrical, interallied',
