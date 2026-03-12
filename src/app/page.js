@@ -602,16 +602,52 @@ function Contact() {
             <div className="ia-contact-card">
               {sent ? (
                 <div className="text-center py-4">
-                  <div style={{ fontSize: '3rem', marginBottom: '16px' }}>✅</div>
-                  <h4 style={{ color: '#1a2a3a', fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '1px' }}>Message Sent!</h4>
-                  <p style={{ color: 'var(--ia-muted)' }}>Thank you for reaching out. We'll get back to you shortly.</p>
-                  <button
-                    className="btn-ia-primary mt-3"
-                    onClick={() => { setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
-                  >
-                    Send Another
-                  </button>
-                </div>
+  <div style={{
+    fontSize: '3rem',
+    marginBottom: '16px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }}>
+    <svg
+      width="72"
+      height="72"
+      viewBox="0 0 72 72"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ animation: 'planefly 1.4s cubic-bezier(0.22,1,0.36,1) forwards' }}
+    >
+      <style>{`
+        @keyframes planefly {
+          0%   { transform: translateX(-60px) translateY(30px) rotate(-30deg); opacity: 0; }
+          40%  { opacity: 1; }
+          75%  { transform: translateX(8px) translateY(-6px) rotate(3deg); opacity: 1; }
+          100% { transform: translateX(0px) translateY(0px) rotate(0deg); opacity: 1; }
+        }
+      `}</style>
+      <circle cx="36" cy="36" r="34" fill="#f97316" opacity="0.10"/>
+      <polygon points="14,36 58,20 44,36 58,52" fill="#f97316"/>
+      <line x1="44" y1="36" x2="32" y2="44" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h4 style={{
+    color: '#1a2a3a',
+    fontFamily: 'var(--font-display)',
+    textTransform: 'uppercase',
+    letterSpacing: '1px'
+  }}>
+    Message Sent!
+  </h4>
+  <p style={{ color: 'var(--ia-muted)' }}>
+    Thank you for reaching out. We'll get back to you shortly.
+  </p>
+  <button
+    className="btn-ia-primary mt-3"
+    onClick={() => { setSent(false); setForm({ name: '', email: '', phone: '', message: '' }); }}
+  >
+    Send Another
+  </button>
+</div>
               ) : (
                 <form className="ia-contact-form" onSubmit={handleSubmit}>
                   <div className="row g-3">

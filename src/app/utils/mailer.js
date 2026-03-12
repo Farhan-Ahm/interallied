@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  host: process.env.SMTP_HOST || 'smtp.office365.com',
   port: parseInt(process.env.SMTP_PORT || '587'),
   secure: false,
   auth: {
-    user: process.env.SMTP_USER || 'your-email@gmail.com',
-    pass: process.env.SMTP_PASS || 'your-app-password',
+    user: process.env.SMTP_USER || 'info@interallied.com',
+    pass: process.env.SMTP_PASS || 'Kking-100',
   },
 });
 
@@ -15,11 +15,11 @@ const transporter = nodemailer.createTransport({
  * @param {Object} params
  * @param {string} params.customerName
  * @param {string} params.customerEmail
- * @param {string} params.customerPhone
+ * @param {string} params.customerPhone 
  * @param {Array}  params.cartItems  - [{ name, category, quantity, specs }]
  */
 export async function sendInquiryEmail({ customerName, customerEmail, customerPhone, cartItems }) {
-  const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@interallied.com';
+  const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@interallied.com';
 
   const itemsHtml = cartItems
     .map(
