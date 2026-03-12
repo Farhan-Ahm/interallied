@@ -17,17 +17,19 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  { id: 1,  name: 'PT-25',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 25 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 2,  name: 'PT-50',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 50 kVA',   'Types: Pole / Pad / UnderGround'] },
-  { id: 3,  name: 'PT-100',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 100 kVA',  'Types: Pole / Pad / UnderGround'] },
-  { id: 4,  name: 'PT-500',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 500 kVA',  'Types: Pole / Pad / UnderGround'] },
-  { id: 5,  name: 'PT-2500',   category: 'Power Transformers', image: '/products/pt-25.png', specs: ['Category: Power Transformers','Capacity: 2500 kVA', 'Types: Pole / Pad / UnderGround'] },
-  { id: 6,  name: 'LV-SWG-A',  category: 'LV Switchgear',      image: '/products/lv-swg.jpg',  specs: ['Category: Low Voltage (LV) Switchgear','Voltage: ≤1000V', 'Type: MDB / MCC / ATS / Panelboards', 'Typical breakers: MCB / MCCB / ACB'] },
-  { id: 7,  name: 'MV-SWG-B',  category: 'MV Switchgear',      image: '/products/mv-swg.jpg',  specs: ['Category: Medium Voltage (LV) Switchgear','Voltage: 1kV – 36kV', 'Type: Metal-Clad / GIS / AIS / RMU', 'Common voltage classes (kV): 11 / 15 / 13.8 / 22 / 33'] },
-  { id: 8,  name: 'HV-SWG-C',  category: 'HV Switchgear',      image: '/products/hv-swg.jpg',  specs: ['Category: High Voltage (LV) Switchgear','Voltage: >36kV', 'Type: SF6 Circuit Breaker / Dead Tank / Live Tank', 'Used in: Transmission substations / Power plants'] },
-  { id: 9,  name: 'MSB-SWB-A', category: 'Switchboards',       image: '/products/msb-swb.jpg', specs: ['Primary Power Distribution Panel', 'Typical components: ACB / Busbar / Metering'] },
-  { id: 10, name: 'DIS-SWB-A', category: 'Switchboards',       image: '/products/dis-swb.jpg', specs: ['Distribution Switchboards', 'Types: MDB / SDB / FDB'] },
-  { id: 11, name: 'MCT-SWB-A', category: 'Switchboards',       image: '/products/mct-swb.png', specs: ['Motor Control Switchboards', 'Types: MCC / VFD / Soft Starter'] },
+  { id: 1,  name: 'PT-25',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 25 kVA', 'Types: Dry/Oil-Immersed', 'Voltage: 240/480/600','Installation: Pole-Mounted, Pad-Mounted/Underground, Underground/Submersible','Standard: CEC/CSA C22.1/ANSI','Gauge Selection: Liquid, Temperature, Pressure'] },
+  { id: 2,  name: 'PT-50',     category: 'Power Transformers', image: '/products/pt-25.png',   specs: ['Category: Power Transformers','Capacity: 50 kVA',   'Types: Dry/Oil-Immersed', 'Voltage: 240/480/600','Installation: Pole-Mounted, Pad-Mounted/Underground, Underground/Submersible','Standard: CEC/CSA C22.1/ANSI','Gauge Selection: Liquid, Temperature, Pressure'] },
+  { id: 3,  name: 'PT-100',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 100 kVA',  'Types: Dry/Oil-Immersed', 'Voltage: 240/480/600','Installation: Pole-Mounted, Pad-Mounted/Underground, Underground/Submersible','Standard: CEC/CSA C22.1/ANSI','Gauge Selection: Liquid, Temperature, Pressure'] },
+  { id: 4,  name: 'PT-500',    category: 'Power Transformers', image: '/products/pt-25.png',  specs: ['Category: Power Transformers','Capacity: 500 kVA',  'Types: Dry/Oil-Immersed', 'Voltage: 240/480/600','Installation: Pole-Mounted, Pad-Mounted/Underground, Underground/Submersible','Standard: CEC/CSA C22.1/ANSI','Gauge Selection: Liquid, Temperature, Pressure'] },
+  { id: 5,  name: 'PT-2500',   category: 'Power Transformers', image: '/products/pt-25.png', specs: ['Category: Power Transformers','Capacity: 2500 kVA', 'Types: Dry/Oil-Immersed', 'Voltage: 240/480/600','Installation: Pole-Mounted, Pad-Mounted/Underground, Underground/Submersible','Standard: CEC/CSA C22.1/ANSI','Gauge Selection: Liquid, Temperature, Pressure'] },
+  
+  { id: 6,  name: 'LV-SWG-A',  category: 'LV Switchgear',      image: '/products/lv-swg.jpg',  specs: ['Category: Low Voltage (LV) Switchgear','Voltage: ≤1000V AC/DC','Amp: 100A to 6,300A', 'Type: MDB / MCC / ATS / Panelboards', 'Typical breakers: MCB / MCCB / ACB','Safety Standards: CSA/CEC/ANSI/IEEE/IEC/NEC','Application: End-User (Buildings)'] },
+  { id: 7,  name: 'MV-SWG-B',  category: 'MV Switchgear',      image: '/products/mv-swg.jpg',  specs: ['Category: Medium Voltage (LV) Switchgear','Voltage: 1kV – 36kV AC/DC', 'Amp: 600A to 4,000A','Type: Metal-Clad/GIS/AIS/RMU/2S', 'Typical Breakers: VCBs, SF6 Circuit-Breakers, ACB, OCB, Solid-State MVDC','Safety Standards: CSA/CEC/ANSI/IEEE/IEC/NEC','Application: Primary Distribution'] },
+  { id: 8,  name: 'HV-SWG-C',  category: 'HV Switchgear',      image: '/products/hv-swg.jpg',  specs: ['Category: High Voltage (LV) Switchgear','Voltage: >36kV AC/DC', 'Amp: >6,300A','Type: AIS/GIS/GCB', 'Typical Breakers: SF6 Circuit-Breakers, Vacuum, ABCB, Oil, Air','Safety Standards: CSA/CEC/ANSI/IEEE/IEC/NEC','Application: Grid Transmission'] },
+  
+  { id: 9,  name: 'MSB-SWB-A', category: 'Switchboards',       image: '/products/msb-swb.jpg', specs: ['Primary Power Distribution Panel', 'Typical components: ACB / Busbar / Metering','Coordination Type: Type-1 or Type-2','Access: Front/Rear','Location: NEMA 1 or NEMA 3R','Separation: Form 1, 2a/b, 3a/b, 4a/b','Standards:  Primarily UL 891, CSA C22.2 No. 244 (Canada), and IEC 61439'] },
+  { id: 10, name: 'DIS-SWB-A', category: 'Switchboards',       image: '/products/dis-swb.jpg', specs: ['Distribution Switchboards', 'Types: MDB / SDB / FDB','Coordination Type: Type-1 or Type-2','Access: Front/Rear','Location: NEMA 1 or NEMA 3R','Separation: Form 1, 2a/b, 3a/b, 4a/b','Standards:  Primarily UL 891, CSA C22.2 No. 244 (Canada), and IEC 61439'] },
+  { id: 11, name: 'MCT-SWB-A', category: 'Switchboards',       image: '/products/mct-swb.png', specs: ['Motor Control Switchboards', 'Types: MCC / VFD / Soft Starter','Coordination Type: Type-1 or Type-2','Access: Front/Rear','Location: NEMA 1 or NEMA 3R','Separation: Form 1, 2a/b, 3a/b, 4a/b','Standards:  Primarily UL 891, CSA C22.2 No. 244 (Canada), and IEC 61439'] },
 ];
 
 // ─────────────────────────────────────────────
@@ -155,13 +157,22 @@ function Hero({ onCatalogueClick }) {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-7">
-            <div className="ia-hero-eyebrow">Trusted Electrical Solutions</div>
+         <div className="ia-hero-eyebrow">
+          <img 
+            src="/nature.png" 
+            alt="Canadian Maple Leaf" 
+            width={42} 
+            height={42} 
+            style={{ objectFit: 'contain' }}
+          />
+          Locally Canadian Manufactured
+        </div>
             <h1>
               Power Your
               <em>Infrastructure</em>
             </h1>
             <p className="ia-hero-desc">
-              Interallied delivers premium transformers, switchgear and switchboard solutions engineered for reliability, safety and performance across industrial and commercial applications.
+              InterAllied Corporation delivers locally manufactured transformer, switchgear, and switchboard solutions engineered to provide reliable, safe, and high-performance electrical infrastructure for industrial and commercial applications.
             </p>
             <div className="d-flex flex-wrap gap-3">
               <button className="btn-ia-primary" onClick={onCatalogueClick}>
@@ -219,7 +230,7 @@ function About() {
     {
       icon: <i className="bi bi-building-gear" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
       title: 'Manufacturing Excellence',
-      body: 'State-of-the-art manufacturing facilities ensuring every unit meets international quality standards including IEC, BS and ANSI.'
+      body: 'State-of-the-art manufacturing facilities ensuring every unit meets stringent Canadian and international quality standards, including Canadian Electrical Code (CEC), CSA Group, International Electrotechnical Commission (IEC), and American National Standards Institute (ANSI).'
     },
     {
       icon: <i className="bi bi-cpu" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
@@ -228,13 +239,13 @@ function About() {
     },
     {
       icon: <i className="bi bi-globe2" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
-      title: 'Global Reach',
-      body: 'Supplying reliable electrical infrastructure to clients across 40+ countries spanning Asia, Middle East, Africa and Europe.'
+      title: 'Global & Local Reach',
+      body: 'Delivering reliable electrical infrastructure and equipment to clients in over 40 countries, with strong project execution across North America (Canada/USA), Mexico, Asia, the Middle East, Africa, and Europe.'
     },
     {
       icon: <i className="bi bi-patch-check" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
       title: 'Certified Quality',
-      body: 'ISO 9001:2015 certified with products tested to IEC 60076, IEC 62271 and other applicable international standards.'
+      body: 'Manufacturing operations certified to ISO 9001:2015 with equipment designed and tested in accordance with Canadian standards from CSA Group and internationally recognized standards including IEC 60076 (power transformers), IEC 62271 (high-voltage switchgear), and other applicable global certification frameworks.'
     },
     {
       icon: <i className="bi bi-headset" style={{fontSize:'1.6rem',color:'var(--ia-orange)'}} />,
@@ -256,13 +267,13 @@ function About() {
             <div className="ia-section-tag">About Interallied</div>
             <h2 className="ia-section-title">Built on <span>Precision</span> & Trust</h2>
             <div className="ia-divider" />
-            <p style={{ color: 'var(--ia-muted)', lineHeight: 1.8 }}>
-              Interallied is a leading supplier of high-quality electrical power equipment, specialising in transformers, switchgear and switchboard solutions. With over two decades of experience, we partner with utilities, industrial facilities and contractors to deliver reliable, standards-compliant products.
+            <p style={{ color: 'var(--ia-muted)', lineHeight: 1.8, textAlign: 'justify' }}>
+              InterAllied Corporation is a leading supplier of electrical power equipment specializing in transformers, switchgear, and switchboard solutions. With more than two-decades of experience, we partner with local utilities, industrial facilities, and contractors to provide reliable, regulatory compliant, and high-performance power distribution systems.
             </p>
           </div>
           <div className="col-lg-5 offset-lg-1 d-flex align-items-center mt-4 mt-lg-0">
             <div style={{ background: '#ffffff', border: '1px solid rgba(255,124,42,0.2)', borderRadius: '8px', padding: '24px', width: '100%' }}>
-              <div style={{ fontSize: '0.75rem', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--ia-orange)', marginBottom: '12px' }}>Our Mission</div>
+              <div style={{ fontWeight: '700',fontSize: '0.82rem', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--ia-orange)', marginBottom: '12px' }}>Our Mission</div>
               <p style={{ color: '#2c3e50', fontSize: '1.05rem', lineHeight: 1.75, margin: 0, fontStyle: 'italic' }}>
                 "To power the world's infrastructure with precision-engineered electrical solutions, delivered with unwavering commitment to quality, safety and customer satisfaction."
               </p>

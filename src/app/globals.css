@@ -12,7 +12,8 @@
   --ia-blue2:        #ffffff;
   --ia-blue-light:  #2a5298;
   --ia-steel:       #4a7ab5;
-  --ia-muted:       #5a6a7e;
+  --ia-muted:       #777b80;
+  --ia-mutedM:       #dcdee1;
   --ia-text:        #2c3e50;
   --ia-white:       #eeeef6;
   --ia-orange:      #ff7c2a;
@@ -91,7 +92,7 @@ h1, h2, h3, h4, h5 {
 .ia-brand-sub {
   font-family: var(--font-body);
   font-size: 0.6rem;
-  color: var(--ia-muted);
+  color: var(--ia-mutedM);
   letter-spacing: 2px;
   display: block;
   text-transform: uppercase;
@@ -185,7 +186,7 @@ h1, h2, h3, h4, h5 {
   display: flex; align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 60px 0 60px;
+  padding: 100px 0 60px;
 }
 
 .ia-hero::before {
@@ -200,18 +201,21 @@ h1, h2, h3, h4, h5 {
 
 .ia-hero-eyebrow {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: bold;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--ia-orange);
   margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.ia-hero-eyebrow::before {
+/* .ia-hero-eyebrow::before {
   content: '';
   width: 32px; height: 2px;
   background: var(--ia-orange);
-}
+} */
 
 .ia-hero h1 {
   font-size: clamp(2rem, 7vw, 6rem);
@@ -308,7 +312,8 @@ h1, h2, h3, h4, h5 {
 
 .ia-section-tag {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--ia-orange);
@@ -323,7 +328,7 @@ h1, h2, h3, h4, h5 {
 
 .ia-section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
+  font-weight: 900;
   color: #1a2a3a;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -338,6 +343,7 @@ h1, h2, h3, h4, h5 {
   padding: 28px;
   height: 100%;
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-align: justify;
 }
 .ia-about-card:hover {
   border-color: var(--ia-orange);
